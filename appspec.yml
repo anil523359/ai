@@ -1,13 +1,33 @@
 version: 0.0
 os: linux
+
+#Lifecycle of Events
+# 1. ApplicationStop
+# 2. BeforeInstall
+# 3. Install - No script is required for this.
+# 4. AfterInstall
+# 5. ApplicationStart
+# 6. ValidateService
+
+
 files:
   - source: /
     destination: cd /var/www/applications/ozak
 
 hooks:
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: ubuntu
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
-    - location: afterinstall.sh
+    - location: scripts/configure_app
       timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: applicationstart.sh
+    - location: scripts/start_server
       timeout: 300
+      runas: ubuntu
