@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: cd /var/www/applications/ozak
+
+hooks:
+  AfterInstall:
+    - location: afterinstall.sh
+      timeout: 300
+  ApplicationStart:
+    - location: applicationstart.sh
+      timeout: 300
