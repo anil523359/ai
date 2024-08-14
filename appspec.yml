@@ -12,7 +12,7 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/applications/ozak
+    destination: /var/www/applications/ozak/build
 permissions:
   - object: /var/www/applications/ozak
     owner: ubuntu
