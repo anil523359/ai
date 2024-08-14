@@ -1,4 +1,3 @@
 #!/bin/bash
-
-cd /var/www/applications/ozak
-npm -f install
+sudo chown -R ubuntu:ubuntu /var/www/applications/ozak
+sudo chmod -R 755 /var/www/applications/ozak
