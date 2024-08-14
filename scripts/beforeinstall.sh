@@ -1,3 +1,5 @@
 #!/bin/bash
-
-sudo rm -rf /var/www/applications/ozak/*
+cd /var/www/applications/ozak
+sudo apt-get update
+sudo apt-get install -y nodejs npm
+npm install
