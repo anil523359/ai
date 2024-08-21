@@ -1,2 +1,2 @@
 #!/bin/bash
-pm2 stop  "ozakai-app" || echo "Process not found, skipping deletion"
+pm2 stop  "ozakai-Web" || echo "Process not found, skipping deletion"
