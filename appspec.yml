@@ -12,9 +12,9 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/applications/ozak/build
+    destination: /var/www/websites/OzakAI-Website
 permissions:
-  - object: /var/www/applications/ozak
+  - object: /var/www/websites/OzakAI-Website
     owner: ubuntu
     group: ubuntu
     mode: 755
