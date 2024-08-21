@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /var/www/applications/ozak
+cd /var/www/websites/OzakAI-Website
 sudo apt-get update
