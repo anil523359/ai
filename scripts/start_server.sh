@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd /var/www/websites/OzakAI-Website/
-pm2 start all
+pm2 serve build 3000 --name "ozakai-app" --spa
+
