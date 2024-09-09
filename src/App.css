@@ -1,0 +1,15 @@
+.App {
+  /* max-width: 1440px; */
+
+  height: 100vh;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+* {
+  font-family: "archivo";
+}
+/* 
+.max-w-1920 {
+  max-width: 1920px;
+} */

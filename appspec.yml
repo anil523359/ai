@@ -1,0 +1,40 @@
+version: 0.0
+os: linux
+
+#Lifecycle of Events
+# 1. ApplicationStop
+# 2. BeforeInstall
+# 3. Install - No script is required for this.
+# 4. AfterInstall
+# 5. ApplicationStart
+# 6. ValidateService
+
+
+files:
+  - source: /
+    destination: /var/www/websites/OzakAI-Website
+permissions:
+  - object: /var/www/websites/OzakAI-Website
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: ubuntu
+
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: ubuntu
+
+  AfterInstall:
+    - location: scripts/change_permissions.sh
+      timeout: 300
+      runas: ubuntu
+
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: ubuntu
